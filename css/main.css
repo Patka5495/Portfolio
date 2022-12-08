@@ -13,7 +13,7 @@ body{
     /* overflow: hidden; */
 }
 body::-webkit-scrollbar{
-    /*display: none;  Chrome, Safari, Opera*/
+    display: none;  /*Chrome, Safari, Opera*/
 }
 #wrap{
     position: absolute;
@@ -34,6 +34,7 @@ header nav{
     transform: translate(-50%, 0);
 }
 header nav h1{
+    
     width: 105px;
     height: 63px;
     top: 20px;
@@ -82,17 +83,18 @@ header nav .remote li img{
     width: 743px;
     text-align: center;
 }
-.greeting h2::before{
-    content: "";
-    position: absolute;
-    left: 50%;
-    bottom: -20%;
-    transform: translate(-50%, 0);
-    width: 180px;
-    height: 36px;
-    background-color: rgba(255, 255, 255, 0.555);
-    border-radius: 50%;
-    filter: blur(10px);
+.cover{
+    width: 600px;
+    height: 625px;
+    margin: auto;
+    background: url(../img/aa.svg) no-repeat;
+    background-size: cover;
+    animation: run 1s alternate infinite steps(8);
+}
+@keyframes run{
+    100%{
+        background-position: -4800px 0;
+    }
 }
 .greeting h3{
     font-weight: 600;
@@ -112,7 +114,7 @@ header nav .remote li img{
 
 }
 .letMe #letMe1{
-    width: 850px;
+    width: 700px;
     height: 100%;
     padding-top: 260px;
     display: flex;
@@ -176,7 +178,8 @@ header nav .remote li img{
     width: 1750px;
     height: 500px;
     display: flex;
-    align-content: space-between;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 .work ul li{
     border: 1px solid #000;
@@ -190,12 +193,146 @@ header nav .remote li img{
     justify-content: center;
     box-shadow: 0px 8px 4px rgba(0, 0, 0, 0.5);
 }
+.artwork{
+    display: inline-block !important;
+    margin: 30px 85px !important;
+    width: 1750px !important;
+    height: 1020px !important;
+    padding-top: 95px;
+    border: 1px solid #fff;
+    overflow: auto;
+	scroll-behavior: smooth	;
+    align-items:flex-start !important;
+    justify-content: center;
+    /* 얘 왜 순위가 밀리지... */
+}
+.artwork::-webkit-scrollbar{
+	width: 20px;
+}
+.artwork::-webkit-scrollbar-thumb{
+    background: rgb(255, 255, 255);
+    border-radius: 10px;
+}
+.artwork::-webkit-scrollbar-track{
+    background-color: rgba(255, 255, 255, 0);
+}
+.artwork .artworkTop{
+    display: flex;
+    width: 100%;
+    height: 633px;
+    border: 1px solid rgb(255, 169, 169);
+    justify-content: space-between;
+}
+.artwork .artworkTop .media{
+    width: 1120px;
+    height: 100%;
+    border: 1px solid rgb(0, 255, 106);
+}
+.artwork .artworkTop .TopDescription{
+    width: 550px;
+    padding-right: 100px;
+    height: 100%;
+    border: 1px solid rgb(255, 187, 0);
+}
+.artwork .TDtitle{
+    font-size: 36px;
+}
+.artwork .TDsubTitle{
+    margin-top: 20px;
+    font-size: 16px;
+    font-weight: 200;
+}
+.artwork .TDlearnTitle{
+    margin-top: 40px;
+    font-size: 24px;
+}
+.artwork .TDlearn{
+    margin-top: 20px;
+    font-size: 16px;
+}
+.artwork .core{    
+    margin-top: 40px;
+    font-size: 24px;
+}
+.artwork .coreList{
+    position: relative;
+    width: 100%;
+    height: 250px;
+    border: 1px solid rgb(255, 187, 0);
+}
+.artwork .coreList a{
+    position: absolute;
+    font-size: 36px;
+    font-weight: bold;
+    color: #FF6A00;
+}
+.coreList a:first-child{
+    top: 20px;
+    left: 80px;
+}
+.coreList a:nth-child(2){
+    top: 32px;
+    left: 234px;
+}
+.coreList a:nth-child(3){
+    top: 100px;
+    left: 40px;
+}
+.coreList a:nth-child(4){
+    top: 160px;
+    left: 180px;
+}
+.coreList a:nth-child(5){
+    top: 110px;
+    left: 330px;
+}
+.artwork .Descriptions{
+    width: 100%;
+    height: 2000px;
+    border: 3px solid rgb(255, 255, 255);
+
+}
 footer{
-    
+    display: flex;
     width: 1920px;
     height: 1080px;
     padding: 30px 85px;
     background-image: url(../img/footerBack.png);
     background-position: -1067px 140px;
     background-repeat: no-repeat;
+}
+#footer1{
+    width: 50%;
+    padding-top: 520px;
+}
+#footer1 h3{
+    font-size: 72px;
+    line-height: 150%;
+}
+#footer1 h4{
+    font-size: 36px;
+    font-weight: 300;
+}
+#footer2{
+    width: 50%;
+    padding-top: 260px;
+    text-align: right;
+}
+#footer2 h2{
+    font-size: 72px;
+    line-height: 150%;
+}
+#footer2 h3{
+    font-size: 36px;
+    font-weight: 300;
+    margin-bottom: 25px;
+}
+#footer2 p{
+    font-size: 24px;
+    line-height: 180%;
+    margin-bottom: 15px;
+}
+#footer2 a{
+    font-size: 24px;
+    line-height: 120%;
 }
