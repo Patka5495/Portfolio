@@ -13,7 +13,7 @@ body{
     /* overflow: hidden; */
 }
 body::-webkit-scrollbar{
-    display: none;  /*Chrome, Safari, Opera*/
+    display: none; /* Chrome, Safari, Opera*/
 }
 #wrap{
     position: absolute;
@@ -39,9 +39,10 @@ header nav h1{
     height: 63px;
     top: 20px;
 }
-header nav h1 a, header nav h1 a img{
+header nav h1 div, header nav h1 div img{
     width: 100%;
     height: 100%;
+    cursor: pointer;
 }
 header nav .remote{
     width: auto;
@@ -78,6 +79,11 @@ header nav .remote li img{
     align-items: center;
     justify-content: center;
 }
+.greeting{
+    position: absolute;
+    top: 0;
+    left: 0px;
+}
 .greeting h2{
     position: relative;
     width: 743px;
@@ -108,10 +114,12 @@ header nav .remote li img{
     letter-spacing: -0.05em;
 }
 .letMe{
+    position: absolute;
+    top: 0;
+    left: calc(1920*1px);
     padding: 30px 85px;
     align-content: space-between; 
     column-gap: 50px;  
-
 }
 .letMe #letMe1{
     width: 700px;
@@ -173,6 +181,11 @@ header nav .remote li img{
     text-align: left;
     margin-left: 30px;
 }
+.work{
+    position: absolute;
+    top: 0;
+    left: calc(1920*2px);
+}
 .work ul{
     border: 1px solid #fff;
     width: 1750px;
@@ -182,7 +195,6 @@ header nav .remote li img{
     justify-content: space-between;
 }
 .work ul li{
-    border: 1px solid #000;
     background-color: #fff;
     color: #000;
     font-weight: 400;
@@ -192,12 +204,21 @@ header nav .remote li img{
     align-items: center;
     justify-content: center;
     box-shadow: 0px 8px 4px rgba(0, 0, 0, 0.5);
+    transition: all .7s ease;
+}
+.work ul li.active{
+    background-color: #FF6A00;
+    color: #fff;
 }
 .artwork{
+    position: absolute;
+    top: -1920px;
+    background-color: #092C86;
+    left: calc(1920*2px);
     display: inline-block !important;
-    margin: 30px 85px !important;
+    margin: 90px 85px !important;
     width: 1750px !important;
-    height: 1020px !important;
+    height: 900px !important;
     padding-top: 95px;
     border: 1px solid #fff;
     overflow: auto;
@@ -205,6 +226,10 @@ header nav .remote li img{
     align-items:flex-start !important;
     justify-content: center;
     /* 얘 왜 순위가 밀리지... */
+    transition: all .7s ease;
+}
+.artwork.active{
+    top: 0;
 }
 .artwork::-webkit-scrollbar{
 	width: 20px;
@@ -289,10 +314,31 @@ header nav .remote li img{
 .artwork .Descriptions{
     width: 100%;
     height: 2000px;
+    padding: 100px;
     border: 3px solid rgb(255, 255, 255);
-
+}
+.artwork .Descriptions li{
+    border: 1px solid #fff;
+    margin-bottom: 100px;
+}
+.artwork .Descriptions h3{
+    font-size: 36px;
+}
+.artwork .Descriptions h4{
+    margin: 10px 50px;
+    padding: 10px 50px;
+    font-size: 36px;
+    background-color: #000;
+}
+.artwork .Descriptions h5{
+    margin: 50px 150px;
+    font-size: 24px;
+    font-weight: normal;
 }
 footer{
+    position: absolute;
+    top: 0;
+    left: calc(1920*3px);
     display: flex;
     width: 1920px;
     height: 1080px;
