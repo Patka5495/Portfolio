@@ -401,7 +401,7 @@ footer{
 }
 #footer1{
     width: 50%;
-    padding-top: 520px;
+    padding-top:50vh;
 }
 #footer1 h3{
     font-size: 72px;
@@ -413,7 +413,7 @@ footer{
 }
 #footer2{
     width: 50%;
-    padding-top: 260px;
+    padding-top: 15vh;
     text-align: right;
 }
 #footer2 h2{
@@ -428,9 +428,10 @@ footer{
 #footer2 p{
     font-size: 24px;
     line-height: 180%;
-    margin-bottom: 15px;
+    margin-bottom: 30px;
 }
 #footer2 a{
-    font-size: 24px;
+    font-size: 36px;
+    font-weight: bold;
     line-height: 120%;
 }
