@@ -45,6 +45,19 @@ header nav h1 img{
     border: 5px solid #092C86;
     border-radius: 45px;
 }
+#remote .remoteGuide{
+    position: absolute;
+    display: flex;
+    font-size: 20px;
+    top: -85px;
+    left: 10px;
+    align-items: center;
+    transition: all .7s ease;
+    cursor: default;
+}
+.remoteGuide.none{
+    opacity: 0;
+}
 .remoteBtn{
     display: flex;
     position: relative;
@@ -75,24 +88,25 @@ header nav h1 img{
     align-items: center;
     justify-content: center;
     transition: all .7s ease;
-    overflow: hidden;
     cursor: pointer;
+    overflow: hidden;
+
 }
 .AEffect.active{
     color: #fff;
 }
 .remoteBtn .remoteEffect{
-    width: 80px;
-    height: 80px;
+    width: 65px;
+    height: 70px;
     position: absolute;
-    top: 62px;
-    left: -10px;
+    top: -82px;
+    left: -5px;
     background-color: #FF6A00  ;
     z-index: -1;
     transition: all .7s ease;
 }
 .remoteEffect.active{
-    top: -2px;
+    top: -5px;
 }
 #content section{
     width: 1920px;

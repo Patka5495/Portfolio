@@ -31,7 +31,7 @@ $('#leftEffectA').mouseleave(function(){
 $('#leftEffectA').click(function(){
     prev();
     $(this).removeClass('active');
-    $('#leftEffect').removeClass('active');                
+    $('#leftEffect').removeClass('active');   
 });
 $('#rightEffectA').mouseenter(function(){
     $(this).addClass('active');
@@ -90,7 +90,7 @@ $(document).keydown(function(event){
         if(isMenuOn == false){
             if (event.keyCode == 90 || event.which == 90 ) {
                 $('#leftEffectA').addClass('active');
-                $('#leftEffect').addClass('active');
+                $('#leftEffect').addClass('active');           
                 LeftBool = true;
                 if(leftProg == 7){
                     prev();
@@ -214,6 +214,8 @@ function prev(){
         pageLeft = pageNum * 1920;
         $('#leftEffect').removeClass('active');
         $('#leftEffectA').removeClass('active');
+        $('.remoteGuide').addClass('none');
+
         // left에 해당하는 변수를 곱해준다
         LeftBool = false;
         // 오 이거 넣으니까 한번 끊겼다가 잘 된다. 야호
@@ -235,6 +237,8 @@ function next(){
         pageLeft = pageNum * 1920;
         $('#rightEffect').removeClass('active');
         $('#rightEffectA').removeClass('active');
+        $('.remoteGuide').addClass('none');
+
         rightBool = false;
         // left에 해당하는 변수를 곱해준다. 이거 그냥 위에서 한번만 선언해줘도 될래나.
         console.log("페이지 넘"+pageNum);
