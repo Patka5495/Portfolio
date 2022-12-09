@@ -6,14 +6,6 @@ window.addEventListener("keydown", function(e) {
     }
 }, false);
 
-setTimeout(function(){
-    $("#wrap").animate(
-        {
-            "left": 0 +"px"
-        },
-        1000,
-    );
-},1000);
 let pageNum = 0;
 // 현재 페이지를 나타내는 변수
 let pageLeft;
@@ -26,7 +18,7 @@ let LeftBool;
 let rightBool;
 let xBool;
 // 이동 관련 bool
-let menuNum=-1;
+let menuNum=1;
 let isMenuOn = false;
 $('#leftEffectA').mouseenter(function(){
     $(this).addClass('active');
@@ -117,7 +109,7 @@ $(document).keydown(function(event){
             }
         }        
         if(isMenuOn == false && pageNum == -2){
-            if (event.keyCode == 40 || event.which == 40 ) {
+            if (event.keyCode == 83 || event.which == 83 ) {
                 if(menuNum<3){
                     menuNum++;
                 }
@@ -125,7 +117,7 @@ $(document).keydown(function(event){
                 $('.work ul li').removeClass('active');
                 $('.work ul li').eq(menuNum).addClass('active');
             }
-            else if (event.keyCode == 38 || event.which == 38 ) {
+            else if (event.keyCode == 65 || event.which == 65 ) {
                 if(menuNum>0){
                     menuNum--;
                 }
@@ -261,6 +253,11 @@ function home(){
     if($("#wrap").is(":animated") == false){
         pageNum = 0
         pageLeft = pageNum * 1920;
+        $('.artwork').removeClass('active');
+        $('#prevBtn').removeClass('none');
+        $('#nextBtn').removeClass('none');
+        $('#XBtn').addClass('none');    
+        isMenuOn = false;
         $("#wrap").animate(
             {
                 "left": pageLeft +"px"
