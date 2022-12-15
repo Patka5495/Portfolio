@@ -27,12 +27,12 @@ header{
 /*logo*/
 header nav h1{
     position: fixed;
-    top: 3.7vh;
-    transform: translate(-50%,0);
+    bottom: 2vh;
+    left: 2vh;
     cursor: pointer;
 }
 header nav h1 img{
-    width: 100px;
+    width: calc(100vw * 100 /1920);
 }
 /*remote controller*/
 #remote{
@@ -40,30 +40,35 @@ header nav h1 img{
     display: flex;
     background-color: #fff;
     filter: drop-shadow(0px 3px 2px rgba(0, 0, 0, 0.514));
-    bottom: 3.7vh;
-    transform: translate(-50%,0);
+    right: 2vh;
+    bottom: 2vh;
     border: 5px solid #092C86;
     border-radius: 45px;
 }
 #remote .remoteGuide{
     position: absolute;
     display: flex;
-    font-size: 20px;
-    top: -85px;
-    left: 10px;
+    font-size: calc(100vw * 20 /1920);
+    width: calc(100vw * 160 /1920);;
+    top: calc(100vw * -45 /1920);
+    left: 50%;
+    transform: translate(-50%,-50%);
     align-items: center;
     transition: all .7s ease;
     cursor: default;
+}
+#remote .remoteGuide img{
+    width: calc(100vw * 44 /1920);;
 }
 .remoteGuide.none{
     opacity: 0;
 }
 .remoteBtn{
     display: flex;
-    position: relative;
-    width: 80px;
-    height: 80px;
-    border: 2px solid #092C86;
+    position: relative;    
+    width: calc(100vw * 80 /1920);
+    height: calc(100vw * 80 /1920);
+    border: calc(100vw * 2 /1920) solid #092C86;
     background-color: #fff;
     border-radius: 50%;
     margin: 5px;
@@ -77,12 +82,13 @@ header nav h1 img{
 }
 .remoteBtn .AEffect{
     display: flex;
-    position: relative;
-    width: 62px;
-    height: 62px;
+    position: relative;    
+    width: calc(100vw * 62 /1920);
+    height: calc(100vw * 62 /1920);
     color:#092C86;
     border-radius: 50%;
-    border: 2px solid #092C86;
+    border: calc(100vw * 2 /1920) solid #092C86;
+    font-size: calc(100vw * 24 /1920);;
     font-family: 'Noto Sans KR', sans-serif;
     font-weight: bold;
     align-items: center;
@@ -90,16 +96,16 @@ header nav h1 img{
     transition: all .7s ease;
     cursor: pointer;
     overflow: hidden;
-
 }
 .AEffect.active{
     color: #fff;
 }
 .remoteBtn .remoteEffect{
-    width: 65px;
-    height: 70px;
+    
+    width: calc(100vw * 65 /1920);
+    height: calc(100vw * 70 /1920);
     position: absolute;
-    top: -82px;
+    top: calc(100vw * -82 /1920);;
     left: -5px;
     background-color: #FF6A00  ;
     z-index: -1;
@@ -109,8 +115,10 @@ header nav h1 img{
     top: -5px;
 }
 #content section{
-    width: 1920px;
-    height: 1080px;
+    width: 100vw;
+    height: 100vh;
+    min-width: 1440px;
+    min-height: 720px;
     margin: auto;
     display: flex;
     align-items: center;
@@ -153,15 +161,13 @@ header nav h1 img{
 .letMe{
     position: absolute;
     top: 0;
-    left: calc(1920*1px);
+    left: calc(100vw*1);
     padding: 30px 85px;
     align-content: space-between; 
     column-gap: 50px;  
 }
 .letMe #letMe1{
     width: 700px;
-    height: 100%;
-    padding-top: 260px;
     display: flex;
     flex-direction: column;
 }
@@ -179,8 +185,6 @@ header nav h1 img{
 }
 .letMe #letMe2{
     width: 850px;
-    height: 100%;
-    padding-top: 260px;
     display: flex;
     align-content: space-between;
     text-align: center;
@@ -193,49 +197,72 @@ header nav h1 img{
 }
 
 .letMe #letMe2 #letMe2-1, .letMe #letMe2 #letMe2-2{
-    width: 412.5px;
+    width: calc(100vw * 412.5 /1920);
+    min-width: 350px;
 }
 #letMe2 h3{
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 }
 #letMe2-1 .skill{
     position: relative;
-    margin:20px 0 20px 210px;
+    height: 25px;
+    margin:30px 0 30px 210px;
     text-align-last: left;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.7);
 }
-.skill:first-of-type::before{
+.skill::before{
     content: "";
     width: 40px;
     height: 40px;
     position: absolute;
     left: -110px;
     top: -8px;
-    background-image: url(../img/unity.svg);
+    background-repeat: no-repeat;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.7));
 }
+.skill:first-of-type::before{
+    background-image: url(../img/unity.svg);
+}
+.skill:nth-of-type(2)::before{
+    background-image: url(../img/html5.png);
+}
+.skill:nth-of-type(3)::before{
+    background-image: url(../img/css.png);
+}
+.skill:nth-of-type(4)::before{
+    background-image: url(../img/JS.png);
+}
+.skill:nth-of-type(5)::before{
+    background-image: url(../img/Illustrator.svg);
+}
+.skill:nth-of-type(6)::before{
+    background-image: url(../img/premiere.svg);
+}
+.skill:nth-of-type(7)::before{
+    background-image: url(../img/AE.svg);
+}
 #letMe2-2 h4{
-    text-align: left;
-    margin-left: 30px;
+    text-align: center;
+    line-height: 240%;
 }
 .work{
     position: absolute;
     top: 0;
-    left: calc(1920*2px);
+    left: calc(100vw*2);
 }
 .work ul{
-    border: 1px solid #fff;
-    width: 1750px;
-    height: 500px;
+    width: 90%;
+    height: calc(100vw * 500 /1920);
     display: flex;
     position: relative;
+    text-align: center;
     flex-wrap: wrap;
     justify-content: space-between;
 }
 .work ul::before{
     position: absolute;
-    font-size: 24px;
-    top: -150px;
+    font-size: calc(100vw * 16/1920);
+    top: calc(100vw * -100 /1920);;
     left: 50%;
     transform: translate(-50%,0);
     content: "A,S : 좌우이동 \A Enter: 선택 \A 마우스 : 클릭!";
@@ -244,50 +271,62 @@ header nav h1 img{
     white-space:pre; /* <pre>와 같은 기능을 합니다. */
 }
 .work ul li{
-    background-color: #fff;
-    color: #000;
+    background-color: #ff6a0000;
+    background-position: center;
+    background-size: 550px;
+    color: #fff;
+    font-size: 20px;
     font-weight: 400;
-    width: 400px;
+    width: 20%;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     box-shadow: 0px 8px 4px rgba(0, 0, 0, 0.5);
-    transition: all .7s ease;
+    transition: all .5s ease;
     cursor: pointer;
+    /* filter: blur(3px); */
+}
+.work ul li:nth-child(1){
+    background-image: url(../img/work1.png);
+}.work ul li:nth-child(2){
+    background-image: url(../img/work2.png);
+}.work ul li:nth-child(3){
+    background-image: url(../img/work3.png);
+}.work ul li:nth-child(4){
+    background-image: url(../img/work4.png);
 }
 .work ul li.active{
+    background-image: none;
     background-color: #FF6A00;
-    color: #fff;
 }
 .artwork{
     position: absolute;
-    top: -1920px;
     background-color: #092C86;
-    left: calc(1920*2px);
+    left: calc(100vw*2);
     display: inline-block !important;
-    width: 1920px !important;
-    height: 1080px !important;
-    padding-top: 95px;
-    border: 1px solid #fff;
+    width: calc(100vw * 1920/1920) !important;
+    height: calc(100vh * 1920/1920) !important;
+    scale: 0;
+    padding-top: calc(100vw * 95/1920);
     overflow: auto;
 	scroll-behavior: smooth	;
     align-items:flex-start !important;
     justify-content: center;
     /* 얘 왜 순위가 밀리지... */
-    transition: all .7s ease;
+    transition: all .7s cubic-bezier(0, 0.78, 0.25, 1);
     box-shadow: 0px 20px 20px 4px rgba(0, 0, 0, 0.774);
-
 }
 .artwork.active{
-    top: 0;
+    scale: 1;
+
 }
 .artwork::-webkit-scrollbar{
-	width: 20px;
+	width: calc(100vw * 20/1920);
 }
 .artwork::-webkit-scrollbar-thumb{
     background: rgb(255, 255, 255);
-    border-radius: 10px;
+    border-radius: calc(100vw * 10/1920);
 }
 .artwork::-webkit-scrollbar-track{
     background-color: rgba(255, 255, 255, 0);
@@ -296,112 +335,156 @@ header nav h1 img{
     display: flex;
     padding: 0px 85px !important;
     width: 100%;
-    height: 633px;
-    border: 1px solid rgb(255, 169, 169);
+    height: calc(100vw * 633/1920);
     justify-content: space-between;
 }
 .artwork .artworkTop .media{
-    width: 1120px;
+    position: relative;
+    width: calc(100vw * 1120/1920);
     height: 100%;
-    border: 1px solid rgb(0, 255, 106);
+    overflow: hidden;
+}
+.artwork .artworkTop .media img,.media iframe{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    display: none;
+    transition: all .7s ease;
+}
+.artwork .artworkTop .media img.select,.media iframe.select{
+    display: block;
+    z-index: 0;
+}
+.artwork .artworkTop .media ul{
+    position: absolute;
+    display: flex;
+    bottom: 10px;
+    left: 50%;
+    transform: translate(-50%,0);
+    gap: 5px;
+}
+.artwork .artworkTop .media ul li{
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;    
+    background-color: #ff6a0075;
+    transition: all .7s ease;
+    z-index: 3;
+}
+.artwork .artworkTop .media ul li.select{
+    background-color: #FF6A00;
 }
 .artwork .artworkTop .TopDescription{
-    width: 550px;
-    padding-right: 100px;
+    width: calc(100vw * 550/1920);
+    padding-right: calc(100vw * 100/1920);
     height: 100%;
-    border: 1px solid rgb(255, 187, 0);
 }
 .artwork .TDtitle{
-    font-size: 36px;
+    font-size: calc(100vw * 36/1920);
 }
 .artwork .TDsubTitle{
-    margin-top: 20px;
-    font-size: 16px;
+    height: calc(100vw * 100/1920);
+    margin-top: calc(100vw * 20/1920);
+    font-size: calc(100vw * 16/1920);
     font-weight: 200;
 }
 .artwork .TDlearnTitle{
-    margin-top: 40px;
-    font-size: 24px;
+    margin-top: calc(100vw * 10/1920);
+    font-size: calc(100vw * 24/1920);
 }
 .artwork .TDlearn{
-    margin-top: 20px;
-    font-size: 16px;
+    font-size: calc(100vw * 16/1920);
+    height: calc(100vw * 140/1920);;
 }
 .artwork .core{    
-    margin-top: 40px;
-    font-size: 24px;
+    margin-top: calc(100vw * 12/1920);
+    font-size: calc(100vw * 24/1920);
 }
 .artwork .coreList{
     position: relative;
     width: 100%;
-    height: 250px;
-    border: 1px solid rgb(255, 187, 0);
+    height: calc(100vw * 250/1920);
 }
 .artwork .coreList a{
     position: absolute;
-    font-size: 36px;
+    font-size: calc(100vw * 24/1920);
     font-weight: bold;
     color: #FF6A00;
 }
 .coreList a:first-child{
-    top: 20px;
-    left: 80px;
+    top: calc(100vw * 20/1920);
+    left: calc(100vw * 80/1920);
 }
 .coreList a:nth-child(2){
-    top: 32px;
-    left: 234px;
+    top: calc(100vw * 32/1920);
+    left: calc(100vw * 234/1920);
 }
 .coreList a:nth-child(3){
-    top: 100px;
-    left: 40px;
+    top: calc(100vw * 100/1920);
+    left: calc(100vw * 40/1920);
 }
 .coreList a:nth-child(4){
-    top: 160px;
-    left: 180px;
+    top: calc(100vw * 160/1920);
+    left: calc(100vw * 180/1920);
 }
 .coreList a:nth-child(5){
-    top: 110px;
-    left: 330px;
+    top: calc(100vw * 110/1920);
+    left: calc(100vw * 330/1920);
 }
 .artwork .Descriptions{
     width: 100%;
-    height: 2000px;
-    padding: 100px;
-    border: 3px solid rgb(255, 255, 255);
+    padding: calc(100vw * 100/1920);
 }
 .artwork .Descriptions li{
-    border: 1px solid #fff;
-    margin-bottom: 100px;
+    margin-bottom: calc(100vw * 100/1920);
 }
 .artwork .Descriptions h3{
-    font-size: 36px;
+    font-size: calc(100vw * 36/1920);
 }
 .artwork .Descriptions h4{
-    margin: 10px 50px;
-    padding: 10px 50px;
-    font-size: 36px;
+    margin: calc(100vw * 40/1920) calc(100vw * 50/1920);
+    padding: calc(100vw * 10/1920) calc(100vw * 50/1920);
+    font-size: calc(100vw * 36/1920);
     background-color: #000;
 }
 .artwork .Descriptions h5{
-    margin: 50px 150px;
-    font-size: 24px;
+    margin: calc(100vw * 50/1920) calc(100vw * 150/1920);
+    font-size: calc(100vw * 24/1920);
     font-weight: normal;
+    line-height: 170%;
 }
 footer{
     position: absolute;
-    top: 0;
-    left: calc(1920*3px);
+    left: calc(100*3vw);
     display: flex;
-    width: 1920px;
-    height: 1080px;
+    width: 100vw;
+    height: 100vh;
+    min-width: 1440px;
+    min-height: 720px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#footerWrap{
+    display: flex;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    max-width: 1920px;
+    max-height: 1080px;
+    min-width: 1440px;
+    min-height: 720px;
     padding: 30px 85px;
+
     background-image: url(../img/footerBack.png);
     background-position: -1067px 140px;
     background-repeat: no-repeat;
 }
 #footer1{
     width: 50%;
-    padding-top:50vh;
+    padding-top: 50vh;
 }
 #footer1 h3{
     font-size: 72px;
@@ -412,9 +495,25 @@ footer{
     font-weight: 300;
 }
 #footer2{
+    position: relative;
     width: 50%;
     padding-top: 15vh;
     text-align: right;
+}
+#lastA{
+    position: relative;
+}
+#lastA::before{
+    position: absolute;
+    content: "";
+    right: 0;
+    bottom: -20px;
+    transform: translate(0, 100%);
+    background-image: url(../img/나.png);
+    background-size: calc(100vw * 1053/1920 * 0.15);
+    background-repeat: no-repeat;
+    width: calc(100vw * 1053/1920 * 0.15);
+    height: calc(100vw * 1404/1920 * 0.15);
 }
 #footer2 h2{
     font-size: 72px;

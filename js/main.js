@@ -211,7 +211,7 @@ function prev(){
     if($("#wrap").is(":animated") == false && pageNum < 0){
         pageNum ++;
         // 페이지 번호가 오르며
-        pageLeft = pageNum * 1920;
+        pageLeft = pageNum * 100;
         $('#leftEffect').removeClass('active');
         $('#leftEffectA').removeClass('active');
         $('.remoteGuide').addClass('none');
@@ -223,7 +223,7 @@ function prev(){
 
         $("#wrap").animate(
             {                        
-                "left": pageLeft +"px"
+                "left": pageLeft +"vw"
             },
             1500
         );                
@@ -234,7 +234,7 @@ function next(){
     if($("#wrap").is(":animated") == false && pageNum >= -2 ){
         pageNum --;
         // 페이지 번호가 내려가며
-        pageLeft = pageNum * 1920;
+        pageLeft = pageNum * 100;
         $('#rightEffect').removeClass('active');
         $('#rightEffectA').removeClass('active');
         $('.remoteGuide').addClass('none');
@@ -246,7 +246,7 @@ function next(){
 
         $("#wrap").animate(
             {
-                "left": pageLeft +"px"
+                "left": pageLeft +"vw"
             },
             1500,
         );
@@ -256,7 +256,7 @@ function home(){
     // console.log(pageNum);
     if($("#wrap").is(":animated") == false){
         pageNum = 0
-        pageLeft = pageNum * 1920;
+        pageLeft = pageNum * 100;
         $('.artwork').removeClass('active');
         $('#prevBtn').removeClass('none');
         $('#nextBtn').removeClass('none');
@@ -264,9 +264,41 @@ function home(){
         isMenuOn = false;
         $("#wrap").animate(
             {
-                "left": pageLeft +"px"
+                "left": pageLeft +"vw"
             },
             1500,
         );
     }
 }
+$('.Tab1').each(function(index, item){
+    $('.Tab1').eq(index).click(function(){                
+        $('.Tab1').removeClass('select');
+        $('.Content1').removeClass('select');
+        $('.Tab1').eq(index).addClass('select');
+        $('.Content1').eq(index).addClass('select');
+    })
+});
+$('.Tab2').each(function(index, item){
+    $('.Tab2').eq(index).click(function(){                
+        $('.Tab2').removeClass('select');
+        $('.Content2').removeClass('select');
+        $('.Tab2').eq(index).addClass('select');
+        $('.Content2').eq(index).addClass('select');
+    })
+});
+$('.Tab3').each(function(index, item){
+    $('.Tab3').eq(index).click(function(){                
+        $('.Tab3').removeClass('select');
+        $('.Content3').removeClass('select');
+        $('.Tab3').eq(index).addClass('select');
+        $('.Content3').eq(index).addClass('select');
+    })
+});
+$('.Tab4').each(function(index, item){
+    $('.Tab4').eq(index).click(function(){                
+        $('.Tab4').removeClass('select');
+        $('.Content4').removeClass('select');
+        $('.Tab4').eq(index).addClass('select');
+        $('.Content4xxxxxx').eq(index).addClass('select');
+    })
+});
